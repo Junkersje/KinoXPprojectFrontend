@@ -5,3 +5,15 @@
     color: white;
     font-size: 30px;
 }
+/*forside*/
+.container {
+    background-color: black;
+}
+body {
+    background-color: black;
+}
+
+.card-image-top {
+    width: 75px;
+    height: 1000px;
+}
