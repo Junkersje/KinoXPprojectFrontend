@@ -1,10 +1,21 @@
 .header {
-    padding: 60px;
+    padding: 20px;
     text-align: center;
     background: darkblue;
     color: white;
     font-size: 30px;
 }
+
+.homebtn {
+    float: left;
+    font-size: 30;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+
 /*forside*/
 .container {
     background-color: black;
