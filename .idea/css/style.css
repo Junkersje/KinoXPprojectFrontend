@@ -1,11 +1,14 @@
+/*yep*/
 .header {
     padding: 20px;
     text-align: center;
     background: darkblue;
     color: white;
     font-size: 30px;
+    margin-bottom: 50px;
 }
 
+/*self explanatory*/
 .homebtn {
     float: left;
     font-size: 30;
@@ -14,4 +17,17 @@
     text-decoration: none;
 
 }
+
+/* add-remove button used for ticket count*/
+.ticket{
+    display: flex;
+}
+
+.frame{
+    padding-left: 5px;
+    padding-right: 5px;
+    border: gray;
+    border-style: solid;
+}
+
 

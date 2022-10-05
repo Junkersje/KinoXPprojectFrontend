@@ -5,6 +5,8 @@
     <link rel="stylesheet" th:href="@{style.css}" href="..\css\style.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <title>Billet bestilling</title>
 </head>
 <body>
@@ -13,13 +15,84 @@
     <h1>KinoXP</h1>
 </div>
 
+<!-- First column-->
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
             <h3>Afspilningstid</h3>
+            <!-- hente tiderne fra klassen Show, og vise dem i en interaktiv dropdown-->
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Vælg
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div>
+                <h3>Antal billetter</h3>
+
+                <div class="ticket">
+                    <p style="margin-right: 40px; font-size:20px">Voksen billet</p>
+                    <input type="number" class="frame" id="adults" name="adults" min="0" max="9" value="0" onchange="getTotalPrice();">
+                    <p id="adult-price" style="font-size: 10px">89</p><p style="font-size: 10px">kr/billet</p>
+                </div>
+
+                <div class="ticket">
+                    <p style="margin-right: 50px; font-size:20px">Børne billet</p>
+                    <input type="number" class="frame" id="children" name="children" min="0" max="9" value="0" onchange="getTotalPrice();">
+                    <p id="child-price" style="font-size: 10px">69</p><p style="font-size: 10px">kr/billet</p>
+                </div>
+
+                <div class="ticket">
+                    <p style="margin-right: 21px; font-size:20px">Pensionist billet</p>
+                    <input type="number" class="frame" id="retirees" name="retirees" min="0" max="9" value="0" onchange="getTotalPrice();">
+                    <p id="retiree-price" style="font-size: 10px">79</p><p style="font-size: 10px">kr/billet</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-4">
+            <h3>Samlede pris</h3>
+            <div id="total" style="color: black; font-size: 30px"></div>
         </div>
 
     </div>
 </div>
+
+<script>
+
+    const prices = {
+        children: 69,
+        adults: 89,
+        retirees: 79
+    };
+
+    const total = document.getElementById("total");
+    total.innerHTML = `<h3>I alt: 0kr</h3>`;
+
+    function getTotalPrice() {
+        const children = document.getElementById("children").value;
+        const adults = document.getElementById("adults").value;
+        const retirees = document.getElementById("retirees").value;
+        const total =
+            parseInt(children) * prices.children +
+            parseInt(adults) * prices.adults +
+            parseInt(retirees) + prices.retirees;
+        total.innerHTML = `<h3>I alt: ${total}kr</h3>`;
+    }
+
+    document.querySelectorAll("input").forEach(el => {
+        el.addEventListener("change", () => {
+            getTotalPrice();
+        });
+    });
+
+</script>
 </body>
 </html>
