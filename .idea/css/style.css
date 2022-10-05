@@ -6,6 +6,7 @@
     color: white;
     font-size: 30px;
     margin-bottom: 50px;
+    width: 100%;
 }
 
 /*self explanatory*/
@@ -17,6 +18,15 @@
     text-decoration: none;
 
 }
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
 
 /* add-remove button used for ticket count*/
 .ticket{
@@ -50,4 +60,51 @@
 }
 
 
+/*css styling for table in movieschedule*/
+table {
+    width: 100%;
+    max-width: 50rem; }
+
+tr:nth-child(even) th {
+    color: #ccc;
+    font-weight: normal;
+}
+
+th,
+td {
+    padding: 0.5rem 1rem;
+}
+
+th {
+    font-weight: normal;
+    border-top: thin dotted #ccc;
+}
+
+td {
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 1.4;
+    border-radius: 0.2rem;
+    transition: opacity 0.3s ease;
+}
+
+td > span {
+    font-size: 0.8em;
+    font-weight: normal;
+    display: block;
+    width: 100%;
+}
+
+
+
+
+.theater1 {
+    background-color: #9CCC65;
+}
+.theater2 {
+    background-color: #FF8A65;
+}
+.break {
+    background-color: #26C6DA;
+}
 
