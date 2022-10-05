@@ -68,23 +68,23 @@
 <script>
 
     const prices = {
-        children: 69,
         adults: 89,
+        children: 69,
         retirees: 79
     };
 
-    const total = document.getElementById("total");
-    total.innerHTML = `<h3>I alt: 0kr</h3>`;
+    const totalDiv = document.getElementById("total");
+    totalDiv.innerHTML = `<h3>I alt: 0kr</h3>`;
 
     function getTotalPrice() {
-        const children = document.getElementById("children").value;
         const adults = document.getElementById("adults").value;
+        const children = document.getElementById("children").value;
         const retirees = document.getElementById("retirees").value;
         const total =
-            parseInt(children) * prices.children +
-            parseInt(adults) * prices.adults +
-            parseInt(retirees) + prices.retirees;
-        total.innerHTML = `<h3>I alt: ${total}kr</h3>`;
+            (parseInt(adults) * prices.adults) +
+            (parseInt(children) * prices.children) +
+            (parseInt(retirees) * prices.retirees);
+        totalDiv.innerHTML = `<h3>I alt: ${total}kr</h3>`;
     }
 
     document.querySelectorAll("input").forEach(el => {
