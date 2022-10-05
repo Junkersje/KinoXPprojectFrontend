@@ -59,9 +59,9 @@
             <h3 style="font-weight: bold">Samlede pris</h3>
             <div id="total" style="color: black; font-size: 30px"></div>
 
-            <form style="margin-top: 100px" method="POST" action="/confirmation">
-                <label for="email" style="font-size: 30px; font-weight: bold">Indtast e-mail</label><br><br>
-                <input id="email" placeholder="example@mail.dk" type="text" name="email"/><br><br>
+            <form style="margin-top: 100px" method="POST" action="confirmation.html">
+                <label for="emailfield" style="font-size: 30px; font-weight: bold">Indtast e-mail</label><br><br>
+                <input id="emailfield" type="email" placeholder="example@mail.dk" type="text" name="email" required/><br><br>
 
                 <input class="signup-button" type="submit" value="Bekræft reservation">
 
@@ -105,6 +105,7 @@
     $(function(){
         $('#header').load('reuse-header.html');
     });
+
 </script>
 </body>
 </html>
