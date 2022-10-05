@@ -17,7 +17,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <h3>Afspilningstid</h3>
+            <h3 style="font-weight: bold">Afspilningstid</h3>
             <!-- hente tiderne fra klassen Show, og vise dem i en interaktiv dropdown-->
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,7 +31,7 @@
 
         <div class="col-sm-4">
             <div>
-                <h3>Antal billetter</h3>
+                <h3 style="font-weight: bold">Antal billetter</h3>
 
                 <div class="ticket">
                     <p style="margin-right: 40px; font-size:20px">Voksen billet</p>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="ticket">
-                    <p style="margin-right: 50px; font-size:20px">Børne billet</p>
+                    <p style="margin-right: 50px; font-size:20px">Børne billet (max 11 år)</p>
                     <input type="number" class="frame" id="children" name="children" min="0" max="9" value="0" onchange="getTotalPrice();">
                     <p id="child-price" style="font-size: 10px">69</p><p style="font-size: 10px">kr/billet</p>
                 </div>
@@ -56,9 +56,20 @@
         </div>
 
         <div class="col-sm-4">
-            <h3>Samlede pris</h3>
+            <h3 style="font-weight: bold">Samlede pris</h3>
             <div id="total" style="color: black; font-size: 30px"></div>
+
+            <form style="margin-top: 100px" method="POST" action="/confirmation">
+                <label for="email" style="font-size: 30px; font-weight: bold">Indtast e-mail</label><br><br>
+                <input id="email" placeholder="example@mail.dk" type="text" name="email"/><br><br>
+
+                <input class="signup-button" type="submit" value="Bekræft reservation">
+
+            </form>
         </div>
+
+    </div>
+
 
     </div>
 </div>
