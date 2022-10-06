@@ -1,37 +1,17 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{style.css}" href="..\css\style.css">
+    <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <!-- Add the <a> below: -->
-        <a class="navbar-brand"><img src="https://content.codecademy.com/courses/learn-bootstrap-components/logo.png" alt="Gloria's Gardening Logo" height="30"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Make the follow elements into a nav component: -->
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Weekly Specials</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">About</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<body>
+<div id="header" class="header"></div>
 <div class="container" >
     <div class="row">
         <div class="col">
@@ -67,6 +47,12 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script>
+
+    $(function(){
+        $('#header').load('reuse-header.html');
+    });
+
+</script>
 </body>
 </html>
