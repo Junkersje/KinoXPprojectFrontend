@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{style.css}" href="..\css\style.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <title>Fejl</title>
+</head>
+<body style="background-color: red">
+
+<div id="header" class="header"></div>
+
+<p style="text-align:center; color:white; font-size: 50px; font-weight: bold">Der var fejl i din bestilling. Det kan skyldes at biografen er fyldt, eller oplysninger du har indtastet var forkerte</p>
+<img class="center" height="500" src="../media/sadshrek.jpg">
+
+<script>
+    $(function(){
+        $('#header').load('reuse-header.html');
+    });
+</script>
+</body>
+</html>
