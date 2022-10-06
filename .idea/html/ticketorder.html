@@ -36,19 +36,19 @@
 
                 <div class="ticket">
                     <p style="margin-right: 40px; font-size:20px">Voksen billet</p>
-                    <input type="number" class="frame" id="adults" name="adults" min="0" max="9" value="0" onchange="getTotalPrice();">
+                    <input type="number" class="frame" id="adults" name="adults" min="0" max="9" value="0" onchange="getTotalPrice(); fillForm()">
                     <p id="adult-price" style="font-size: 10px">89</p><p style="font-size: 10px">kr/billet</p>
                 </div>
 
                 <div class="ticket">
                     <p style="margin-right: 50px; font-size:20px">Børne billet (max 11 år)</p>
-                    <input type="number" class="frame" id="children" name="children" min="0" max="9" value="0" onchange="getTotalPrice();">
+                    <input type="number" class="frame" id="children" name="children" min="0" max="9" value="0" onchange="getTotalPrice(); fillForm()">
                     <p id="child-price" style="font-size: 10px">69</p><p style="font-size: 10px">kr/billet</p>
                 </div>
 
                 <div class="ticket">
                     <p style="margin-right: 21px; font-size:20px">Pensionist billet</p>
-                    <input type="number" class="frame" id="retirees" name="retirees" min="0" max="9" value="0" onchange="getTotalPrice();">
+                    <input type="number" class="frame" id="retirees" name="retirees" min="0" max="9" value="0" onchange="getTotalPrice(); fillForm()" >
                     <p id="retiree-price" style="font-size: 10px">79</p><p style="font-size: 10px">kr/billet</p>
                 </div>
 
@@ -60,12 +60,18 @@
             <h3 style="font-weight: bold">Samlede pris</h3>
             <div id="total" style="color: black; font-size: 30px"></div>
 
-            <form style="margin-top: 100px" method="POST" action="confirmation.html">
+            <form style="margin-top: 100px">
                 <label for="emailfield" style="font-size: 30px; font-weight: bold">Indtast e-mail</label><br><br>
-                <input id="emailfield" type="email" placeholder="example@mail.dk" type="text" name="email" required/><br><br>
+                <input id="emailfield" type="email" placeholder="example@mail.dk" type="text" name="email" onchange="fillForm()" required/><br><br>
+            </form>
 
+            <form method="POST" action="confirmation.html">
+                <h3 style="font-weight: bold">Din bestilling</h3>
+                <input id="email" type="email" type="text" name="email" readonly >
+                <h4 style="font-weight: bold">Antal voksenbilletter</h4> <input id="adult-tickets" type="number" name="adult-tickets" readonly>
+                <h4 style="font-weight: bold">Antal børnebilletter</h4> <input id="child-tickets" type="number" name="child-tickets" readonly>
+                <h4 style="font-weight: bold">Antal pensionistbilleter</h4> <input id="retiree-tickets" type="number" name="retiree-tickets" readonly>
                 <input class="signup-button" type="submit" value="Bekræft reservation">
-
             </form>
         </div>
 
@@ -73,7 +79,7 @@
 
 
     </div>
-</div>
+
 
 <script>
 
@@ -106,6 +112,17 @@
     $(function(){
         $('#header').load('reuse-header.html');
     });
+
+    function fillForm() {
+        const adultTickets = document.getElementById("adults");
+        const childTickets = document.getElementById("children");
+        const retireeTickets = document.getElementById("retirees")
+        const email = document.getElementById("emailfield")
+        document.getElementById("email").value = email.value;
+        document.getElementById("adult-tickets").value = adultTickets.value;
+        document.getElementById("child-tickets").value = childTickets.value;
+        document.getElementById("retiree-tickets").value = retireeTickets.value;
+    }
 
 </script>
 </body>
