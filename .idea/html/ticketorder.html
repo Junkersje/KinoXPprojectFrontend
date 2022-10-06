@@ -57,20 +57,19 @@
         </div>
 
         <div class="col-sm-4">
-            <h3 style="font-weight: bold">Samlede pris</h3>
-            <div id="total" style="color: black; font-size: 30px"></div>
-
-            <form style="margin-top: 100px">
                 <label for="emailfield" style="font-size: 30px; font-weight: bold">Indtast e-mail</label><br><br>
                 <input id="emailfield" type="email" placeholder="example@mail.dk" type="text" name="email" onchange="fillForm()" required/><br><br>
-            </form>
+
 
             <form method="POST" action="confirmation.html">
                 <h3 style="font-weight: bold">Din bestilling</h3>
+                <h4 style="font-weight: bold">Email</h4>
                 <input id="email" type="email" type="text" name="email" readonly >
                 <h4 style="font-weight: bold">Antal voksenbilletter</h4> <input id="adult-tickets" type="number" name="adult-tickets" readonly>
                 <h4 style="font-weight: bold">Antal børnebilletter</h4> <input id="child-tickets" type="number" name="child-tickets" readonly>
                 <h4 style="font-weight: bold">Antal pensionistbilleter</h4> <input id="retiree-tickets" type="number" name="retiree-tickets" readonly>
+                <h3 style="font-weight: bold">Samlede pris</h3>
+                <div id="total" style="color: black; font-size: 30px"></div>
                 <input class="signup-button" type="submit" value="Bekræft reservation">
             </form>
         </div>
