@@ -12,7 +12,7 @@ class MOVIE {
         let response = await fetch(this.movieurlData);
         this.data = await response.json();
         this.showUI();
-        this.setMovieData(1);
+        this.setMovieData(0);
     };
 
     showUI(){
@@ -21,10 +21,12 @@ class MOVIE {
 
     setMovieData(index) {
         let entry = this.data[index];
+        $("#movie-id").text(entry.id);
         $("#movie-title").text(entry.title);
         $("#movie-movieGenre").text(entry.movieGenre);
         $("#movie-playTime").text(entry.playTime);
         $("#movie-pgrating").text(entry.pgrating);
+        $("#movie-date").text(entry.date);
         $("#movie-data").show();
     }
 }

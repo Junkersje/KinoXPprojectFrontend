@@ -1,4 +1,3 @@
-/*https://codepen.io/dartokloning/pen/ZEBjgWm  ----link to a good example of +/- button and how it works js*/
 
 'use strict'
 console.log("bøøøøh");
