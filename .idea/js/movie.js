@@ -29,3 +29,11 @@ class MOVIE {
     }
 }
 var movie = new MOVIE();
+//array med movies
+async function loadMovies() {
+    const response = await fetch('/api/v1/movies');
+    const movies = await response.json();
+    for(let movie of movies) {
+        <div class="col"><a href=""><img class="img-fluid" src=movie.imgURL/></a></div>
+    }
+}
