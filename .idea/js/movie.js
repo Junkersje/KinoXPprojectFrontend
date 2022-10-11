@@ -27,6 +27,7 @@ class MOVIE {
         $("#movie-playTime").text(entry.playTime);
         $("#movie-pgrating").text(entry.pgrating);
         $("#movie-date").text(entry.date);
+        //$("#movie-imgURL").src(entry.imgURL);
         $("#movie-data").show();
     }
 }
