@@ -13,7 +13,8 @@ class MOVIE {
         this.data = await response.json();
         this.showUI();
         this.setMovieData(0);
-    };
+        this.loadMovies();
+    }
 
     showUI(){
         $('#movie').text(this.data.movie);
@@ -30,13 +31,37 @@ class MOVIE {
         //$("#movie-imgURL").src(entry.imgURL);
         $("#movie-data").show();
     }
-}
-var movie = new MOVIE();
-//array med movies
-async function loadMovies() {
-    const response = await fetch('/api/v1/movies');
-    const movies = await response.json();
-    for(let movie of movies) {
-        <div class="col"><a href=""><img class="img-fluid" src=movie.imgURL/></a></div>
+
+    //array med movies og loo
+    async loadMovies() {
+        let movieRows = "<div class=\"row\">";
+
+        for(let i = 0; i < this.data.length; i++) {
+            movieRows += "<div class=\"col-sm-4\"><a href='filmInfo.html/" + this.data[i].id + "'><img class='img-fluid' src='"+this.data[i].imgURL +"'/></a></div>";
+            if(i != 0 && (i + 1) % 3 == 0) {
+                movieRows += "</div><div class=\"row\">";
+            }
+        }
+
+        movieRows += "</div>";
+        document.getElementById("container-json").innerHTML = movieRows;
     }
+
+    async movieInfo() {
+        let pathURL =
+    }
+
+    //getURLId() {
+    //    let url_string = window.location.href;
+    //    let url = new URL(url_string);
+    //    let id = url.searchParams.get("id");
+    //    return id;
+    //}
 }
+
+var movie = new MOVIE();
+//"<div class=\"row\">" +
+//"<div class=\"col\"><a href=\"ticketorder.html\"><img class=\"img-fluid\" src=\"" + data[i].imgURL + "\"/></a></div>" +
+//"<div class=\"col\"><a href=\"ticketorder.html\"><img class=\"img-fluid\" src=\"" + data[i + 1].imgURL + "].imgURL}/></a></div>" +
+//"<div class=\"col\"><a href=\"ticketorder.html\"><img class=\"img-fluid\" src=\"" + data[i + 2].imgURL +  "].imgURL}/></a></div>" +
+//+ "</div>";
