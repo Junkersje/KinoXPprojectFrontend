@@ -31,5 +31,6 @@ function createResponse(jsonFile, res) {
         res.json(json);
     })
 }
+
 // Start the HTTP server task.
 app.listen(HTTP_PORT, () => console.log(`HTTP server listening at http://localhost:${HTTP_PORT}`));
