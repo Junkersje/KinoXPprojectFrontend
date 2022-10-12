@@ -1,5 +1,5 @@
 'use strict'
-
+console.log("hej");
 class MOVIE {
     movieurlData = 'http://localhost:8080/api/v1/movies/';
 
@@ -30,7 +30,7 @@ class MOVIE {
         $("#movie-playTime").text(entry.playTime);
         $("#movie-pgrating").text(entry.pgrating);
         $("#movie-date").text(entry.date);
-        $("#movie-imgURL").src(entry.imgURL);
+        //$("#movie-imgURL").src(entry.imgURL);
         $("#movie-data").show();
     }
 
