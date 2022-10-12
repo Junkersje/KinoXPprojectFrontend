@@ -17,10 +17,10 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2>Censur:</h2>
             <form>
                 <div class="form-group">
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <label for="censur">Censur:</label>
+                    <select class="form-control" id="censur">
                         <option>Tilladt for alle</option>
                         <option>Frarådes børn under 7 år</option>
                         <option>Tilladt for børn over 15 år</option>
@@ -28,12 +28,17 @@
                     </select>
                 </div>
 
-                <h2>Filmlængde:</h2>
+                <label for="movieTitle">Original titel:</label>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="movieTitle" placeholder="Skriv titel ind her" name="movieTitle">
+                </div>
+
+                <label>Filmlængde:</label>
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Timer</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <label>Timer</label>
+                            <select class="form-control" id="hours">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -42,8 +47,8 @@
                     </div>
                     <div class="col">
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Minutter</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <label for="minuttes">Minutter</label>
+                            <select class="form-control" id="minuttes">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -109,13 +114,9 @@
                     </div>
                 </div>
 
-                <h2>Original titel:</h2>
+                <label for="reviews">Anmeldelser:</label>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Skriv titel ind her">
-                </div>
-                <h2>Anmeldelser:</h2>
-                <div class="form-group">
-                    <select class="form-control" id="exampleFormControlSelect1" placeholder="Vælg antal stjerner">
+                    <select class="form-control" id="reviews" placeholder="Vælg antal stjerner">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -123,13 +124,13 @@
                         <option>5</option>
                     </select>
                 </div>
-                <h2>Premiere:</h2>
+                <label for="premiere">Premiere:</label>
                 <div class="form-group date">
-                    <input type="datetime-local" class="form-control" id="date"/>
+                    <input type="datetime-local" class="form-control" id="premiere"/>
                 </div>
-                <h2>Genre:</h2>
+                <label for="genre">Genre:</label>
                 <div class="form-group">
-                    <select class="form-control" id="exampleFormControlSelect1" placeholder="Vælg genre">
+                    <select class="form-control" id="genre">
                         <option>Action</option>
                         <option>Adventure</option>
                         <option>Animation</option>
@@ -142,13 +143,19 @@
                         <option>Thriller</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" id="submitKnap">hejsa</button>
             </form>
         </div>
     </div>
 </div>
-
-
+<p id="p1">hej</p>
+<p id="p2">hej</p>
+<p id="p3">hej</p>
+<p id="p4">hej</p>
+<p id="p5">hej</p>
+<p id="p6">hej</p>
+<p id="p7">hej</p>
+<script src="addMovie.js"></script>
 <script>
     $(function(){
         $('#header').load('reuse-header.html');
