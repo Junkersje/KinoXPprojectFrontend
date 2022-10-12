@@ -28,7 +28,7 @@ class MOVIE {
         $("#movie-playTime").text(entry.playTime);
         $("#movie-pgrating").text(entry.pgrating);
         $("#movie-date").text(entry.date);
-        //$("#movie-imgURL").src(entry.imgURL);
+ //       $("#movie-imgURL").src(entry.imgURL);
         $("#movie-data").show();
     }
 
@@ -37,7 +37,7 @@ class MOVIE {
         let movieRows = "<div class=\"row\">";
 
         for(let i = 0; i < this.data.length; i++) {
-            movieRows += "<div class=\"col-sm-4\"><a href='filmInfo.html/" + this.data[i].id + "'><img class='img-fluid' src='"+this.data[i].imgURL +"'/></a></div>";
+            movieRows += "<div class=\"col-sm-4\"><a href='filmInfo.html?id=" + this.data[i].id + "'><img class='img-fluid' src='"+this.data[i].imgURL +"'/></a></div>";
             if(i != 0 && (i + 1) % 3 == 0) {
                 movieRows += "</div><div class=\"row\">";
             }
@@ -46,6 +46,13 @@ class MOVIE {
         movieRows += "</div>";
         document.getElementById("container-json").innerHTML = movieRows;
     }
+
+    async loadMovie() {
+        this.setMovieData(this.data[i].id);
+        document.getElementById("container-loadmovie").innerHTML = movieRows;
+    }
+
+
 
 
     //getURLId() {
