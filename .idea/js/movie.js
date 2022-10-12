@@ -47,9 +47,6 @@ class MOVIE {
         document.getElementById("container-json").innerHTML = movieRows;
     }
 
-    async movieInfo() {
-        let pathURL =
-    }
 
     //getURLId() {
     //    let url_string = window.location.href;
