@@ -54,7 +54,7 @@ class MOVIE {
         movie += "<p>Titel: " + this.data[this.getURLId() -1].title + " </p>";
         movie += "<p>Premiere " + this.data[this.getURLId() -1].date + " </p>";
         movie += "<p>Genre: " + this.data[this.getURLId() -1].movieGenre + " </p>";
-        movie += "<a href=\"ticketorder.html\" type=\"button\" class=\"btn btn-primary\">Køb billetter her</a>"
+        movie += "<a href=\"ticketorder.html\" type=\"button\" class=\"btn btn-primary\">Køb billetter her</a>";
         movie += "</div>";
         document.getElementById("movie").innerHTML = movie;
     }
